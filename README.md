@@ -1,4 +1,4 @@
-# Barber Booking System
+# Barber Booking System💈
 
 The Barber Booking System is a web application built using Thymeleaf, Spring Boot, JPA, and Spring Security. It allows customers to book appointments with barbers and manage their bookings efficiently. This README file provides an overview of the project, instructions for setting up and running the application, and other relevant information.
 

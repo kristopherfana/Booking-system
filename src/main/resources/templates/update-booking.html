@@ -49,12 +49,12 @@
                         <div class="card-body">
                             <div th:if="${param.success}">
                                 <div
-                                        class="alert alert-dark">You've successfully booked a Clayton Experience!</div>
+                                        class="alert alert-dark">You've successfully updated your booking for Clayton Experience!</div>
                             </div>
                             <form id="contact-form" method="post"
                                   autocomplete="off"
                                   th:object="${bookingDto}"
-                                  th:action="@{/booking}">
+                                  th:action="@{/booking/update/{id}(id=${booking.id})}">
                                 <div class="card-body p-0 my-3">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -90,7 +90,7 @@
                                         <div class="col-md-6">
                                             <div class="input-group input-group-static mb-4">
                                                 <label>Time</label>
-                                                <input type="text"
+                                                <input type="time"
                                                        class="form-control" placeholder="John" id="time" required autofocus="autofocus" th:field="*{time}">
                                             </div>
                                         </div>

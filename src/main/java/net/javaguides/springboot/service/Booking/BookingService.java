@@ -15,6 +15,6 @@ public interface BookingService {
     List<Booking> findBookingsByClient(User client);
     List<Booking> findBookingsByDate(LocalDate date);
     Optional<Booking> findBookingByTime(LocalTime time);
-
+    Booking edit(BookingDto bookingDto, Long id);
     Booking save(BookingDto bookingDto);
 }

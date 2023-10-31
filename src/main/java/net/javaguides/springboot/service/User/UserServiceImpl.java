@@ -39,14 +39,16 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User save(UserRegistrationDto userRegistrationDto) {
 		System.out.println("User role is"+userRegistrationDto.getRoleName());
-		RoleName roleName=
-				RoleName.valueOf(userRegistrationDto.getRoleName());
-		if(roleName == null){
+		RoleName roleName;
+		if(userRegistrationDto.getRoleName() == null){
 			roleName=RoleName.ROLE_USER;
+		}else{
+			roleName=
+					RoleName.valueOf(userRegistrationDto.getRoleName());
 		}
 		System.out.println("User role now is"+roleName);
 		Role userRole =
-				roleRepository.findByName(RoleName.ROLE_USER).orElseThrow(() -> new AppException("User Role not set."));
+				roleRepository.findByName(roleName).orElseThrow(() -> new AppException("User Role not set."));
 		User user = new User(userRegistrationDto.getFirstName(),
 				userRegistrationDto.getLastName(), userRegistrationDto.getEmail(),
 				passwordEncoder.encode(userRegistrationDto.getPassword()), userRegistrationDto.getPhoneNumber(), Collections.singleton(userRole));

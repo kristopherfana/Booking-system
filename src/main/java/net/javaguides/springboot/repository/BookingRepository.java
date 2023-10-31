@@ -17,8 +17,13 @@ public interface BookingRepository extends JpaRepository<Booking,
     List<Booking> findBookingsByBarber(User barber);
     List<Booking> findBookingsByClient(User client);
     List<Booking> findBookingsByDate(LocalDate date);
-    Optional<Booking> findBookingByTime(LocalTime time);
+
     List<Booking> findBookingsByDateAndBarber_Email(LocalDate date,
                                                     String barberEmail);
+    Optional<Booking> findBookingsByBarber_IdAndDateAndTime(Long barber_id, LocalDate date, String time);
+
+    List<Booking> findBookingsByDateAndClient_Id(LocalDate date,
+                                                 Long client_id);
+    Optional<Booking> findBookingsByDateAndClient_IdAndTime(LocalDate date, Long client_id, String time);
 
 }

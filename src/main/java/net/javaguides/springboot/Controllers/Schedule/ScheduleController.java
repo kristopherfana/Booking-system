@@ -19,6 +19,9 @@ public class ScheduleController {
     @GetMapping("/all")
     public String showScheduleList(Model model){
         List<Schedule> scheduleList= scheduleService.findAll();
+        for(Schedule schedule : scheduleList){
+            System.out.println(schedule);
+        }
         model.addAttribute("scheduleList", scheduleList);
         return "users";
     }
@@ -26,9 +29,8 @@ public class ScheduleController {
     @GetMapping("/{email}")
     public String showScheduleListByBarber(@PathVariable("email") String email, Model model){
         List<Schedule> scheduleListByBarber= scheduleService.findByBarber(email);
-        for(Schedule schedule:scheduleListByBarber){
-            System.out.println(schedule);
-        }
-        return "users";
+        model.addAttribute("scheduleListByBarber",
+                scheduleListByBarber);
+        return "schedules";
     }
 }

@@ -10,10 +10,11 @@
     <link rel="apple-touch-icon" sizes="76x76" th:href="@{/img/apple-icon.png}">
     <link rel="icon" type="image/png" th:href="@{/img/div.MuiBox-root.png}">
     <title>
-        Services - Claykutz' Barbershop
+        Users Claykutz' Barbershop
     </title>
     <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" th:href="@{fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700}" />
+    <link rel="stylesheet" type="text/css"
+          th:href="@{/fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700}" />
     <!-- Nucleo Icons -->
     <link rel="icon" type="image/png" th:href="@{/img/div.MuiBox-root.png}">
     <link th:href="@{/css/nucleo-icons.css}" rel="stylesheet" />
@@ -21,7 +22,8 @@
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <!-- Material Icons -->
-    <link th:href="@{fonts.googleapis.com/icon?family=Material+Icons+Round}" rel="stylesheet">
+    <link
+            th:href="@{/fonts.googleapis.com/icon?family=Material+Icons+Round}" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" th:href="@{/css/material-kit.css?v=3.0.4}" rel="stylesheet" />
     <!-- Nepcha Analytics (nepcha.com) -->
@@ -35,28 +37,36 @@
     <div class="page-header min-vh-100">
         <div class="container">
             <div class="row">
-                <h2>Services</h2>
+                <h2>Bookings</h2>
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Barber</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="service: ${barberServiceList}">
-                        <td th:text="${service.id}" />
-                        <td th:text="${service.name}" />
-                        <td th:text="${service.description}" />
+                    <tr th:each="booking: ${bookings}">
+                        <td th:text="${booking.id}" />
+                        <td th:text="${booking.client.email}" />
+                        <td th:text="${booking.barber.email}" />
+                        <td th:text="${booking.service.name}" />
+                        <td th:text="${booking.date}" />
+                        <td th:text="${booking.time}" />
                         <td><a
-                                th:href="@{/service/edit/{id}(id=${service.id})}">Edit</a>
+                                th:href="@{/booking/edit/{id}(id=${booking.id})}">Edit</a>
                             <a
-                                    th:href="@{/service/delete/{id}(id=${service.id})}">Delete</a>
+                                    th:href="@{/booking/delete/{id}(id=${booking.id})}">Delete</a>
                         </td>
                     </tr>
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>

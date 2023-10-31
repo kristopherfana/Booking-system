@@ -71,6 +71,14 @@ public class Schedule {
         this.barber = barber;
     }
 
+    public BookingStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(BookingStatus status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Schedule{" +
@@ -79,6 +87,7 @@ public class Schedule {
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
                 ", barber=" + barber +
+                ", status=" + status +
                 '}';
     }
 }

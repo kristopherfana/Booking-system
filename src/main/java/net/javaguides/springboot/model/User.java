@@ -8,7 +8,8 @@ import java.util.Set;
 import javax.persistence.*;
 
 @Entity
-@Table(name =  "user", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name =  "user", uniqueConstraints =
+@UniqueConstraint(columnNames = "email"))
 public class User {
 	
 	@Id
@@ -20,7 +21,8 @@ public class User {
 	
 	@Column(name = "last_name")
 	private String lastName;
-	
+
+
 	private String email;
 	
 	private String password;
@@ -39,6 +41,9 @@ public class User {
 
 	@OneToMany(mappedBy = "barber", cascade = CascadeType.ALL)
 	private List<Schedule> schedules;
+
+	@OneToMany(mappedBy = "barber",cascade = CascadeType.ALL)
+	private List<Booking> bookings;
 	
 	public User() {
 		

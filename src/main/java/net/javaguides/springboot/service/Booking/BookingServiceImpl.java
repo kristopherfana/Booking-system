@@ -2,31 +2,37 @@ package net.javaguides.springboot.service.Booking;
 
 import net.javaguides.springboot.AppException;
 import net.javaguides.springboot.model.Booking;
+import net.javaguides.springboot.model.BookingStatus;
+import net.javaguides.springboot.model.Schedule;
 import net.javaguides.springboot.model.User;
 import net.javaguides.springboot.repository.BarberServiceRepositry;
 import net.javaguides.springboot.repository.BookingRepository;
+import net.javaguides.springboot.repository.ScheduleRepository;
 import net.javaguides.springboot.repository.UserRepository;
 import net.javaguides.springboot.web.dto.BookingDto;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class BookingServiceImpl implements BookingService {
 
-    private BookingRepository bookingRepository;
-    private UserRepository userRepository;
-    private BarberServiceRepositry barberServiceRepositry;
+    private final BookingRepository bookingRepository;
+    private final UserRepository userRepository;
+    private final BarberServiceRepositry barberServiceRepositry;
+    private final ScheduleRepository scheduleRepository;
 
     public BookingServiceImpl(BookingRepository bookingRepository,
                               UserRepository userRepository,
-                              BarberServiceRepositry barberServiceRepositry){
+                              BarberServiceRepositry barberServiceRepositry, ScheduleRepository scheduleRepository){
         this.bookingRepository=bookingRepository;
         this.userRepository=userRepository;
         this.barberServiceRepositry=barberServiceRepositry;
+        this.scheduleRepository=scheduleRepository;
 
     }
     @Override
@@ -61,11 +67,35 @@ public class BookingServiceImpl implements BookingService {
                 bookingDto.getTime()
         );
 
+        return getBooking(bookingDto, booking);
+
+    }
+
+    @Override
+    public Booking edit(BookingDto bookingDto, Long id){
+        Booking booking = new Booking(
+                bookingDto.getDate(),
+                bookingDto.getTime()
+        );
+        booking.setId(id);
+        return getBooking(bookingDto, booking);
+
+    }
+
+    private Booking getBooking(BookingDto bookingDto, Booking booking) {
         booking.setBarber(userRepository.findByEmail(bookingDto.getBarberEmail()));
         booking.setService(barberServiceRepositry.findById(bookingDto.getServiceId()).orElseThrow(()->new AppException("Barber not found")));
         booking.setClient(userRepository.findByEmail(bookingDto.getClientEmail()));
-        System.out.println(booking);
+        setScheduleStatus(bookingDto);
         return bookingRepository.save(booking);
+    }
 
+    private void setScheduleStatus(BookingDto bookingDto){
+        Schedule schedule=
+                scheduleRepository.findByDateAndStartTime(bookingDto.getDate(), LocalTime.parse(bookingDto.getTime(), DateTimeFormatter.ofPattern("HH:mm"))).orElseThrow(()-> new AppException("Schedule not found"));
+        System.out.println(schedule.getStatus());
+        if (schedule.getStatus()==null){
+            schedule.setStatus(BookingStatus.Booked);
+        }
     }
 }

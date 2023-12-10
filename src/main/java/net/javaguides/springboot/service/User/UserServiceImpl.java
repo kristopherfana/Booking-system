@@ -9,6 +9,7 @@ import net.javaguides.springboot.AppException;
 import net.javaguides.springboot.model.RoleName;
 import net.javaguides.springboot.repository.RoleRepository;
 import net.javaguides.springboot.service.EmailSender.NotificationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,13 +29,14 @@ public class UserServiceImpl implements UserService{
 
 	private final UserRepository userRepository;
 	private final RoleRepository roleRepository;
-	private final BCryptPasswordEncoder passwordEncoder;
+
+	@Autowired
+	private BCryptPasswordEncoder passwordEncoder;
 	
-	public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
+	public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
 		super();
 		this.userRepository = userRepository;
 		this.roleRepository= roleRepository;
-		this.passwordEncoder = passwordEncoder;
 	}
 
 	@Override

@@ -5,7 +5,6 @@ import net.javaguides.springboot.model.BarberServiceModel;
 import net.javaguides.springboot.repository.BarberServiceRepositry;
 import net.javaguides.springboot.service.BarberService.BarberService;
 import net.javaguides.springboot.web.dto.BarberServiceDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +14,13 @@ import java.util.List;
 @Controller
 @RequestMapping("/service")
 public class BarberServiceController {
-    @Autowired private BarberService barberService;
-    @Autowired private BarberServiceRepositry barberServiceRepository;
+    private final BarberService barberService;
+    private final BarberServiceRepositry barberServiceRepository;
+
+    public BarberServiceController(BarberService barberService, BarberServiceRepositry barberServiceRepository) {
+        this.barberService = barberService;
+        this.barberServiceRepository = barberServiceRepository;
+    }
 
 
     @ModelAttribute("barber_service")
@@ -55,6 +59,14 @@ public class BarberServiceController {
     public String updateService(@PathVariable("id") long id,
                                 BarberServiceModel barberServiceModel){
         barberServiceRepository.save(barberServiceModel);
-        return "redirect:/service/list";
+        return "redirect:/service/list?edit";
+    }
+    @GetMapping("/delete/{id}")
+    public String deleteBookingService(@PathVariable("id") long id) {
+        BarberServiceModel barberServiceModel = barberServiceRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "Invalid service Id:" + id));
+        barberServiceRepository.delete(barberServiceModel);
+        return "redirect:/service/list?delete";
     }
 }

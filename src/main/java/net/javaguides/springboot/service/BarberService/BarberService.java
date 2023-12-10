@@ -8,4 +8,5 @@ import java.util.List;
 public interface BarberService {
     List<BarberServiceModel> listBarberServices();
     BarberServiceModel save(BarberServiceDto barberServiceDto);
+    BarberServiceModel findById(Long id);
 }

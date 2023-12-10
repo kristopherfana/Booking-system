@@ -1,5 +1,6 @@
 package net.javaguides.springboot.service.BarberService;
 
+import net.javaguides.springboot.AppException;
 import net.javaguides.springboot.model.BarberServiceModel;
 import net.javaguides.springboot.repository.BarberServiceRepositry;
 import net.javaguides.springboot.web.dto.BarberServiceDto;
@@ -10,15 +11,14 @@ import java.util.List;
 @Service
 public class BarberServiceImpl implements BarberService{
 
-    private BarberServiceRepositry barberServiceRepositry;
+    private final BarberServiceRepositry barberServiceRepositry;
 
     public BarberServiceImpl(BarberServiceRepositry barberServiceRepositry){
-        super();
         this.barberServiceRepositry=barberServiceRepositry;
     }
     @Override
     public List<BarberServiceModel> listBarberServices() {
-        return (List<BarberServiceModel>) barberServiceRepositry.findAll();
+        return barberServiceRepositry.findAll();
     }
 
     @Override
@@ -28,5 +28,10 @@ public class BarberServiceImpl implements BarberService{
         );
         System.out.println(barberServiceModel);
         return barberServiceRepositry.save(barberServiceModel);
+    }
+
+    @Override
+    public BarberServiceModel findById(Long id) {
+        return barberServiceRepositry.findById(id).orElseThrow(()->new AppException("Service not found"));
     }
 }

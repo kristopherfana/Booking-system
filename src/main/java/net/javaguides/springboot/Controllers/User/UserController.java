@@ -1,19 +1,22 @@
 package net.javaguides.springboot.Controllers.User;
 
+import com.twilio.exception.ApiException;
 import net.javaguides.springboot.AppException;
 import net.javaguides.springboot.model.RoleName;
 import net.javaguides.springboot.model.User;
 import net.javaguides.springboot.repository.UserRepository;
+import net.javaguides.springboot.service.Reports.ReportService;
 import net.javaguides.springboot.service.User.UserService;
 import net.javaguides.springboot.web.dto.UserRegistrationDto;
+import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -26,7 +29,7 @@ public class UserController {
         List<User> userList=userService.listAllUsers();
         model.addAttribute("userList", userList);
 
-        return "users";
+        return "users-new";
     }
 
     @GetMapping("users/{role}")
@@ -35,7 +38,7 @@ public class UserController {
         model.addAttribute("role", roleName);
         model.addAttribute("userList", userList);
 
-        return "users";
+        return "users-new";
     }
 
     @GetMapping("user/edit/{id}")
@@ -50,7 +53,7 @@ public class UserController {
     public String updateUser(@PathVariable("id") long id,
                              User user) {
         userRepository.save(user);
-        return "redirect:/users";
+        return "redirect:/users?edit";
     }
 
     @GetMapping("user/delete/{id}")
@@ -58,8 +61,9 @@ public class UserController {
         User user = userRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
         userRepository.delete(user);
-        return "redirect:/users";
+        return "redirect:/users?delete";
     }
+
 
 
 }

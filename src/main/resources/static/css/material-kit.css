@@ -5862,6 +5862,7 @@ fieldset:disabled .btn {
   --bs-alert-color: #1f2b3e;
   --bs-alert-bg: #d6dae1;
   --bs-alert-border-color: #c2c8d1;
+  color: white !important;
 }
 
 .alert-dark .alert-link {

@@ -27,7 +27,14 @@ public class Booking {
 
     private LocalDate date;
 
+    @DateTimeFormat(pattern = "HH-mm")
     private String time;
+
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "ENUM('CONFIRMED', 'CANCELLED') " +
+            "DEFAULT " +
+            "'CONFIRMED'")
+    private BookingStatus status;
 
     public Booking() {
     }
@@ -45,6 +52,14 @@ public class Booking {
     public Booking(LocalDate date, String time) {
         this.date=date;
         this.time=time;
+    }
+
+    public BookingStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(BookingStatus status) {
+        this.status = status;
     }
 
     public Long getId() {

@@ -8,9 +8,11 @@ import java.util.stream.Collectors;
 import net.javaguides.springboot.AppException;
 import net.javaguides.springboot.model.RoleName;
 import net.javaguides.springboot.repository.RoleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import net.javaguides.springboot.service.EmailSender.NotificationService;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -24,16 +26,15 @@ import net.javaguides.springboot.web.dto.UserRegistrationDto;
 @Service
 public class UserServiceImpl implements UserService{
 
-	private UserRepository userRepository;
-	private RoleRepository roleRepository;
+	private final UserRepository userRepository;
+	private final RoleRepository roleRepository;
+	private final BCryptPasswordEncoder passwordEncoder;
 	
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
-	
-	public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
+	public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
 		super();
 		this.userRepository = userRepository;
 		this.roleRepository= roleRepository;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 	@Override
@@ -46,9 +47,8 @@ public class UserServiceImpl implements UserService{
 			roleName=
 					RoleName.valueOf(userRegistrationDto.getRoleName());
 		}
-		System.out.println("User role now is"+roleName);
 		Role userRole =
-				roleRepository.findByName(roleName).orElseThrow(() -> new AppException("User Role not set."));
+				this.getRolesByName(roleName);
 		User user = new User(userRegistrationDto.getFirstName(),
 				userRegistrationDto.getLastName(), userRegistrationDto.getEmail(),
 				passwordEncoder.encode(userRegistrationDto.getPassword()), userRegistrationDto.getPhoneNumber(), Collections.singleton(userRole));
@@ -57,18 +57,24 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public List<User> listUsersByRole(RoleName roleName){
-		List<User> userListByRoles = userRepository.findByRoles(roleRepository.findByName(roleName).orElseThrow(() -> new AppException("User Role not set.")));
-		for(User user: userListByRoles){
-			System.out.println(user);
-		}
-		return userListByRoles;
+		return userRepository.findByRoles(this.getRolesByName(roleName));
 	}
 
-
+	@Override
+	public Role getRolesByName(RoleName roleName){
+		return roleRepository.findByName(roleName).orElseThrow(()-> new AppException("Role not found"));
+	}
 
 	@Override
 	public List<User> listAllUsers() {
-		return (List<User>) userRepository.findAll();
+		return userRepository.findAll();
+	}
+
+	@Override
+	public User getLoggedInUser() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String email = authentication.getName();
+		return userRepository.findByEmail(email);
 	}
 
 	@Override

@@ -7,8 +7,10 @@ import javax.persistence.TemporalType;
 import java.time.LocalDate;
 
 public class BookingDto {
-    private String clientEmail;
+
+    private Long id;
     private String barberEmail;
+    private String clientEmail;
     private Long serviceId;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
@@ -17,15 +19,25 @@ public class BookingDto {
     @DateTimeFormat(pattern = "HH-mm")
     private String time;
 
+    private String serviceName;
+
     public BookingDto() {
     }
 
-    public BookingDto(String clientEmail, String barberEmail, Long serviceId, LocalDate date, String time) {
-        this.clientEmail = clientEmail;
+    public BookingDto(String barberEmail, Long serviceId, LocalDate date, String time) {
         this.barberEmail = barberEmail;
         this.serviceId = serviceId;
         this.date = date;
         this.time = time;
+    }
+    public BookingDto(Long id, String barberEmail, String clientEmail, Long serviceId, LocalDate date, String time, String serviceName) {
+        this.id = id;
+        this.barberEmail = barberEmail;
+        this.clientEmail = clientEmail;
+        this.serviceId = serviceId;
+        this.date = date;
+        this.time = time;
+        this.serviceName = serviceName;
     }
 
     public String getClientEmail() {
@@ -34,6 +46,14 @@ public class BookingDto {
 
     public void setClientEmail(String clientEmail) {
         this.clientEmail = clientEmail;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getBarberEmail() {
@@ -66,5 +86,13 @@ public class BookingDto {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 }

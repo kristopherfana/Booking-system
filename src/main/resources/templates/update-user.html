@@ -3,17 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
   <link rel="apple-touch-icon" sizes="76x76" th:href="@{/img/apple-icon.png}">
   <link rel="icon" type="image/png" th:href="@{/img/div.MuiBox-root.png}">
   <title>
     Registration Claykutz' Barbershop
   </title>
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" th:href="@{fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700}" />
   <!-- Nucleo Icons -->
   <link rel="icon" type="image/png" th:href="@{/img/div.MuiBox-root.png}">
   <link th:href="@{/css/nucleo-icons.css}" rel="stylesheet" />
@@ -21,15 +16,322 @@
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
-  <link th:href="@{fonts.googleapis.com/icon?family=Material+Icons+Round}" rel="stylesheet">
   <!-- CSS Files -->
   <link id="pagestyle" th:href="@{/css/material-kit.css?v=3.0.4}" rel="stylesheet" />
+  <link id="pagestyle" th:href="@{/css/users.css}" rel="stylesheet" />
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 </head>
 
 <body class="contact-us">
+<div class="container position-sticky z-index-sticky top-0">
+  <div class="row">
+    <div class="col-12">
+      <nav class="navbar navbar-expand-lg  blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+        <div class="container-fluid px-0">
+          <a
+                  class="navbar-brand font-weight-bolder ms-sm-3" th:href="@{/}" rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom">
+            Claykutz
+          </a>
+          <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+          </button>
+          <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
+            <ul class="navbar-nav navbar-nav-hover ms-auto">
+              <!-- Users link -->
+              <li
+                      class="nav-item dropdown dropdown-hover mx-2" sec:authorize="hasAnyRole('ROLE_ADMIN')">
+                <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
+                  Users
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuBlocks">
+                  <div class="d-none d-lg-block">
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem">
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/users}">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Users By Role</h6>
+                            <span class="text-sm">See all roles</span>
+                          </div>
+
+                        </div>
+                      </a>
+                      <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                        <a
+                                class="dropdown-item ps-3 border-radius-md mb-1" th:href="@{/users/ROLE_ADMIN}">
+                          Admin
+                        </a>
+                        <a
+                                class="dropdown-item ps-3 border-radius-md mb-1" th:href="@{/users/ROLE_BARBER}">
+                          Barber
+                        </a>
+                        <a
+                                class="dropdown-item ps-3 border-radius-md mb-1" th:href="@{/users/ROLE_USER}">
+                          User
+                        </a>
+                      </div>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem">
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/user-registration}">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Add User</h6>
+                            <span class="text-sm">Register a ClaytonXP user</span>
+                          </div>
+
+                        </div>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="row d-lg-none">
+                    <div class="col-md-12">
+                      <div class="d-flex mb-2">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Users by Role</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <a
+                              class="dropdown-item ps-3 border-radius-md mb-1" th:href="@{/users/ROLE_ADMIN}">
+                        Admin
+                      </a>
+                      <a
+                              class="dropdown-item ps-3 border-radius-md mb-1" th:href="@{/users/ROLE_BARBER}">
+                        Barber
+                      </a>
+                      <a
+                              class="dropdown-item ps-3 border-radius-md mb-1" th:href="@{/users/ROLE_USER}">
+                        User
+                      </a>
+                      <div class="d-flex mb-2 mt-3">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Add User</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <!-- Services link -->
+              <li class="nav-item dropdown dropdown-hover mx-2">
+                <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuBlocks">
+                  <div class="d-none d-lg-block">
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem">
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/service/list}">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Services</h6>
+                            <span class="text-sm">See all services offered</span>
+                          </div>
+
+                        </div>
+                      </a>
+                    </li>
+                    <li
+                            class="nav-item dropdown dropdown-hover dropdown-subitem" sec:authorize="hasAnyRole('ROLE_BARBER', 'ROLE_ADMIN')">
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/service/add}" >
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Add Service</h6>
+                            <span class="text-sm">Register a ClaytonXP service</span>
+                          </div>
+
+                        </div>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="row d-lg-none">
+                    <div class="col-md-12">
+                      <div class="d-flex mb-2">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Services</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                              class="d-flex mb-2 mt-3" sec:authorize="hasAnyRole('ROLE_BARBER', 'ROLE_ADMIN')">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Add Service</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <!-- Schedule link -->
+              <li
+                      class="nav-item dropdown dropdown-hover mx-2" sec:authorize="hasAnyRole('ROLE_BARBER', 'ROLE_ADMIN')">
+                <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
+                  Schedule
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuBlocks">
+                  <div class="d-none d-lg-block">
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem">
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/schedule/all}">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Schedules</h6>
+                            <span class="text-sm">See all schedules</span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem">
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/schedule/all}">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Add Barber Schedule</h6>
+                            <span class="text-sm">Add a ClaytonXP Barber schedule</span>
+                          </div>
+
+                        </div>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="row d-lg-none">
+                    <div class="col-md-12">
+                      <div class="d-flex mb-2">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Schedules</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex mb-2 mt-3">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Add Schedule</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <!-- Booking link -->
+              <li class="nav-item dropdown dropdown-hover mx-2">
+                <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages" data-bs-toggle="dropdown" aria-expanded="false">
+                  Bookings
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md dropdown-md-responsive p-3 border-radius-lg mt-0 mt-lg-3" aria-labelledby="dropdownMenuBlocks">
+                  <div class="d-none d-lg-block">
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem">
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/booking/all}" sec:authorize="hasRole('ROLE_ADMIN')">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Bookings</h6>
+                            <span class="text-sm">See all bookings</span>
+                          </div>
+
+                        </div>
+                      </a>
+
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/booking/barber/my-bookings}" sec:authorize="hasRole('ROLE_BARBER')">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Bookings</h6>
+                            <span class="text-sm">See all bookings</span>
+                          </div>
+
+                        </div>
+                      </a>
+
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/booking/client/my-bookings}" sec:authorize="hasRole('ROLE_USER')">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Bookings</h6>
+                            <span class="text-sm">See all bookings</span>
+                          </div>
+
+                        </div>
+                      </a>
+                    </li>
+                    <li class="nav-item dropdown dropdown-hover dropdown-subitem">
+                      <a
+                              class="dropdown-item py-2 ps-3 border-radius-md" th:href="@{/booking/step1}">
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Book!</h6>
+                            <span class="text-sm">Book a Clayton's experience!</span>
+                          </div>
+
+                        </div>
+                      </a>
+                    </li>
+                  </div>
+                  <div class="row d-lg-none">
+                    <div class="col-md-12">
+                      <div class="d-flex mb-2">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">List Bookings</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-flex mb-2 mt-3">
+                        <div class="icon h-10 me-3 d-flex mt-1">
+                        </div>
+                        <div class="w-100 d-flex align-items-center justify-content-between">
+                          <div>
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Book!</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item my-auto ms-3 ms-lg-0">
+                <a th:href="@{/booking/step1}"
+                   class="btn btn-sm btn-outline-dark  bg-gradient-dark  mb-0 me-1 mt-2 mt-md-0" th:unless="${#authorization.expression('isAuthenticated()')}">Book A Clay's Experience!</a>
+                <a th:href="@{/logout}"
+                   class="btn btn-sm btn-default mb-0 me-1 mt-2 mt-md-0" th:if="${#authorization.expression('isAuthenticated()')}">Log out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+    </div>
+  </div>
+</div>
 <!-- -------- START HEADER 8 w/ card over right bg image ------- -->
 <section>
   <div class="page-header min-vh-100">
@@ -52,7 +354,7 @@
               </div>
               <form id="contact-form" method="post"
                     autocomplete="off" th:object="${user}"
-                    th:action="@{user/update/{id}(id=${user.id})}">
+                    th:action="@{/user/update/{id}(id=${user.id})}">
                 <div class="card-body p-0 my-3">
                   <div class="row">
                     <div class="col-md-6">
@@ -69,8 +371,8 @@
                     <div class="col-md-6 ps-md-2">
                       <div class="input-group input-group-static mb-4">
                         <label>Phone Number</label>
-                        <input type="text" class="form-control" placeholder="0772345122"
-                               id="phoneNumber" required autofocus="autofocus" th:field="*{phoneNumber}">
+                        <input class="form-control"
+                               title="Please enter a valid phone number starting with 07 and having at least 10 characters" id="phoneNumber" type="tel" pattern="07\d{8}" required autofocus="autofocus" th:field="*{phoneNumber}">
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -88,7 +390,8 @@
                     <div class="col-md-12">
                       <div class="input-group input-group-static mb-4">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Test123*" id="password" required autofocus="autofocus" th:field="*{password}">
+                        <input
+                                type="password" class="form-control" placeholder="Test123*" id="password" required autofocus="autofocus" th:field="*{password}" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" title="Password must be at least 8 characters long and contain at least one capital letter, one number." >
                       </div>
                     </div>
 <!--                    <select name="role"-->

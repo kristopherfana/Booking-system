@@ -2,9 +2,12 @@ package net.javaguides.springboot.web.dto;
 
 import net.javaguides.springboot.model.RoleName;
 
+import javax.validation.constraints.Email;
+
 public class UserRegistrationDto {
 	private String firstName;
 	private String lastName;
+	@Email(message = "Invalid email format", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
 	private String email;
 	private String password;
 	private String phoneNumber;

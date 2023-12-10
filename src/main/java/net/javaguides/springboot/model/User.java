@@ -1,11 +1,11 @@
 package net.javaguides.springboot.model;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name =  "user", uniqueConstraints =
@@ -22,7 +22,7 @@ public class User {
 	@Column(name = "last_name")
 	private String lastName;
 
-
+	@Email(message = "Invalid email format", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
 	private String email;
 	
 	private String password;
@@ -30,7 +30,7 @@ public class User {
 	@Column(name="phone_number")
 	private String phoneNumber;
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "users_roles",
 			joinColumns = @JoinColumn(
@@ -43,7 +43,10 @@ public class User {
 	private List<Schedule> schedules;
 
 	@OneToMany(mappedBy = "barber",cascade = CascadeType.ALL)
-	private List<Booking> bookings;
+	private List<Booking> bookingsBarber;
+
+	@OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
+	private List<Booking> bookingsClient;
 	
 	public User() {
 		
@@ -111,6 +114,22 @@ public class User {
 
 	public void setSchedules(List<Schedule> schedules) {
 		this.schedules = schedules;
+	}
+
+	public List<Booking> getBookingsBarber() {
+		return bookingsBarber;
+	}
+
+	public void setBookingsBarber(List<Booking> bookingsBarber) {
+		this.bookingsBarber = bookingsBarber;
+	}
+
+	public List<Booking> getBookingsClient() {
+		return bookingsClient;
+	}
+
+	public void setBookingsClient(List<Booking> bookingsClient) {
+		this.bookingsClient = bookingsClient;
 	}
 
 	@Override

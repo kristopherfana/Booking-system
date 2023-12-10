@@ -1,23 +1,21 @@
 package net.javaguides.springboot;
 
 import net.javaguides.springboot.model.Booking;
-import net.javaguides.springboot.model.BookingStatus;
-import net.javaguides.springboot.model.RoleName;
-import net.javaguides.springboot.model.Schedule;
+import net.javaguides.springboot.model.ScheduleStatus;
+import net.javaguides.springboot.model.User;
 import net.javaguides.springboot.repository.BookingRepository;
 import net.javaguides.springboot.repository.RoleRepository;
 import net.javaguides.springboot.repository.ScheduleRepository;
 import net.javaguides.springboot.repository.UserRepository;
 import net.javaguides.springboot.service.Booking.BookingService;
+import net.javaguides.springboot.service.EmailSender.NotificationService;
 import net.javaguides.springboot.service.Schedule.ScheduleService;
 import net.javaguides.springboot.service.User.UserService;
 import net.javaguides.springboot.web.dto.BookingDto;
-import net.javaguides.springboot.web.dto.UserRegistrationDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.awt.print.Book;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -40,6 +38,9 @@ class RegistrationLoginSpringBootSecurityThymeleafApplicationTests {
 	private ScheduleService scheduleService;
 	@Autowired
 	private BookingService bookingService;
+	@Autowired
+	private NotificationService emailSenderService;
+
 
 	@Test
 	public void listScheduleByDay(){
@@ -52,17 +53,31 @@ class RegistrationLoginSpringBootSecurityThymeleafApplicationTests {
 
 	@Test
 	public void findScheduleByDateAndTime(){
-		BookingDto bookingDto = new BookingDto("kfana@africau.edu",
-				"tawandan@africau.edu",1L,LocalDate.parse("2023-10" +
-						"-16",
-				DateTimeFormatter.ofPattern("yyyy-MM-dd")),"09:00" +
-				":00");
-		Schedule schedule=
-				scheduleRepository.findByDateAndStartTime(bookingDto.getDate(), LocalTime.parse(bookingDto.getTime(),DateTimeFormatter.ofPattern("HH:mm:ss"))).orElseThrow(()-> new AppException("Schedule not found"));
-		schedule.setStatus(BookingStatus.Booked);
-		System.out.println(schedule);
+		BookingDto bookingDto = new BookingDto(
+                "mukichig@africau.edu",2L,LocalDate.parse("2023-11" +
+						"-25",
+				DateTimeFormatter.ofPattern("yyyy-MM-dd")),"09:00");
 		bookingService.save(bookingDto);
+	}
 
+	@Test
+	public void findScheduleByDateAndTimeAndBarber(){
+		User barber= userRepository.findByEmail("kfana@africau.edu");
+		List<LocalTime> scheduleList=
+				scheduleRepository.findDistinctTimeByBarberAndBookingStatusAndDate(barber, ScheduleStatus.FREE,LocalDate.parse("2023-11" +
+						"-25"));
+		System.out.println(scheduleList);
+
+	}
+
+	@Test
+	public void sendMessage(){
+		emailSenderService.sendMessage("+263777344737", "Hey");
+	}
+
+	@Test
+	public void verifyPhoneNumber(){
+		emailSenderService.verifyPhoneNumber("0712345678");
 	}
 
 }

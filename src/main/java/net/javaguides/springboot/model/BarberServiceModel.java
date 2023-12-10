@@ -1,6 +1,7 @@
 package net.javaguides.springboot.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="service")
@@ -13,6 +14,9 @@ public class BarberServiceModel {
 
     @Column(nullable = false, columnDefinition = "TEXT", length = 500)
     private String description;
+
+    @OneToMany(mappedBy = "service")
+    private List<Booking> bookings;
 
     public BarberServiceModel() {
     }

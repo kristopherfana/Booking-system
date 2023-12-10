@@ -1,0 +1,253 @@
+2023-12-08 12:52:25.984  INFO 21060 --- [restartedMain] inSpringBootSecurityThymeleafApplication : Starting RegistrationLoginSpringBootSecurityThymeleafApplication on DESKTOP-U420RK7 with PID 21060 (C:\Users\Kris\Downloads\registration-login-spring-boot-security-thymeleaf-hibernate-master\target\classes started by Kris in C:\Users\Kris\Downloads\registration-login-spring-boot-security-thymeleaf-hibernate-master)
+2023-12-08 12:52:26.009  INFO 21060 --- [restartedMain] inSpringBootSecurityThymeleafApplication : No active profile set, falling back to default profiles: default
+2023-12-08 12:52:26.272  INFO 21060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-12-08 12:52:26.274  INFO 21060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-12-08 12:52:28.530  INFO 21060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2023-12-08 12:52:28.862  INFO 21060 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 303ms. Found 5 JPA repository interfaces.
+2023-12-08 12:52:30.894  INFO 21060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-08 12:52:30.926  INFO 21060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-08 12:52:30.929  INFO 21060 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2023-12-08 12:52:31.332  INFO 21060 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-08 12:52:31.333  INFO 21060 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5058 ms
+2023-12-08 12:52:31.650  INFO 21060 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-12-08 12:52:31.781  INFO 21060 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-08 12:52:31.916  WARN 21060 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-08 12:52:31.976  WARN 21060 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingController' defined in file [C:\Users\Kris\Downloads\registration-login-spring-boot-security-thymeleaf-hibernate-master\target\classes\net\javaguides\springboot\Controllers\Booking\BookingController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookingServiceImpl' defined in file [C:\Users\Kris\Downloads\registration-login-spring-boot-security-thymeleaf-hibernate-master\target\classes\net\javaguides\springboot\service\Booking\BookingServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl' defined in file [C:\Users\Kris\Downloads\registration-login-spring-boot-security-thymeleaf-hibernate-master\target\classes\net\javaguides\springboot\service\User\UserServiceImpl.class]: Unsatisfied dependency expressed through constructor parameter 2; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfiguration': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'userServiceImpl': Requested bean is currently in creation: Is there an unresolvable circular reference?
+2023-12-08 12:52:31.977  INFO 21060 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-08 12:52:32.031  INFO 21060 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2023-12-08 12:52:32.515  INFO 21060 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2023-12-08 12:52:32.581 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@4eaac783
+2023-12-08 12:52:32.581 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BooleanType@4eaac783
+2023-12-08 12:52:32.581 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@4eaac783
+2023-12-08 12:52:32.584 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@5696e9b5
+2023-12-08 12:52:32.585 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.TrueFalseType@631d1bdf
+2023-12-08 12:52:32.588 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.YesNoType@76580c8a
+2023-12-08 12:52:32.590 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@9d99efd
+2023-12-08 12:52:32.591 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.ByteType@9d99efd
+2023-12-08 12:52:32.591 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@9d99efd
+2023-12-08 12:52:32.595 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.CharacterType@4de03bb4
+2023-12-08 12:52:32.595 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.CharacterType@4de03bb4
+2023-12-08 12:52:32.596 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@4de03bb4
+2023-12-08 12:52:32.598 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@452c3a08
+2023-12-08 12:52:32.599 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.ShortType@452c3a08
+2023-12-08 12:52:32.600 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.ShortType@452c3a08
+2023-12-08 12:52:32.605 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.IntegerType@344fee0
+2023-12-08 12:52:32.605 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.IntegerType@344fee0
+2023-12-08 12:52:32.606 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@344fee0
+2023-12-08 12:52:32.611 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@ec9f48
+2023-12-08 12:52:32.615 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.LongType@ec9f48
+2023-12-08 12:52:32.615 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.LongType@ec9f48
+2023-12-08 12:52:32.618 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@31e61b7b
+2023-12-08 12:52:32.618 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.FloatType@31e61b7b
+2023-12-08 12:52:32.618 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.FloatType@31e61b7b
+2023-12-08 12:52:32.621 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@150c1b3c
+2023-12-08 12:52:32.621 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.DoubleType@150c1b3c
+2023-12-08 12:52:32.621 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@150c1b3c
+2023-12-08 12:52:32.624 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@b52cbee
+2023-12-08 12:52:32.625 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@b52cbee
+2023-12-08 12:52:32.627 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BigIntegerType@4abfb1d1
+2023-12-08 12:52:32.627 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@4abfb1d1
+2023-12-08 12:52:32.631 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.StringType@5ebd9a88
+2023-12-08 12:52:32.631 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.StringType@5ebd9a88
+2023-12-08 12:52:32.633 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.StringNVarcharType@6b2367c6
+2023-12-08 12:52:32.635 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@6e856b86
+2023-12-08 12:52:32.637 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.UrlType@766a8b8c
+2023-12-08 12:52:32.638 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.UrlType@766a8b8c
+2023-12-08 12:52:32.640 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.DurationType@6ceeb27e
+2023-12-08 12:52:32.640 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.DurationType@6ceeb27e
+2023-12-08 12:52:32.643 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration Instant -> org.hibernate.type.InstantType@73e37e48
+2023-12-08 12:52:32.643 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.InstantType@73e37e48
+2023-12-08 12:52:32.646 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@24b575d2
+2023-12-08 12:52:32.646 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@24b575d2
+2023-12-08 12:52:32.648 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.LocalDateType@35b2c27a
+2023-12-08 12:52:32.648 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@35b2c27a
+2023-12-08 12:52:32.651 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@6c11730e
+2023-12-08 12:52:32.653 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@6c11730e
+2023-12-08 12:52:32.656 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@44f23460
+2023-12-08 12:52:32.656 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@44f23460
+2023-12-08 12:52:32.658 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@24db2f36
+2023-12-08 12:52:32.659 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@24db2f36
+2023-12-08 12:52:32.661 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a7f8ba
+2023-12-08 12:52:32.662 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@2a7f8ba
+2023-12-08 12:52:32.664 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.DateType@20d7cc76
+2023-12-08 12:52:32.665 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.DateType@20d7cc76
+2023-12-08 12:52:32.667 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.TimeType@6159449c
+2023-12-08 12:52:32.667 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.TimeType@6159449c
+2023-12-08 12:52:32.671 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.TimestampType@539d0086
+2023-12-08 12:52:32.672 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@539d0086
+2023-12-08 12:52:32.672 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.TimestampType@539d0086
+2023-12-08 12:52:32.674 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@1e5709ad
+2023-12-08 12:52:32.677 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.CalendarType@3646c67f
+2023-12-08 12:52:32.677 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@3646c67f
+2023-12-08 12:52:32.677 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@3646c67f
+2023-12-08 12:52:32.679 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@3773748f
+2023-12-08 12:52:32.681 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@1d186930
+2023-12-08 12:52:32.683 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.LocaleType@188ddcf1
+2023-12-08 12:52:32.685 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@188ddcf1
+2023-12-08 12:52:32.687 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.CurrencyType@15e29b8a
+2023-12-08 12:52:32.687 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@15e29b8a
+2023-12-08 12:52:32.689 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.TimeZoneType@718cfa4c
+2023-12-08 12:52:32.690 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@718cfa4c
+2023-12-08 12:52:32.692 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.ClassType@71692fa9
+2023-12-08 12:52:32.692 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.ClassType@71692fa9
+2023-12-08 12:52:32.694 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@649ef866
+2023-12-08 12:52:32.694 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@649ef866
+2023-12-08 12:52:32.695 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@54c62b8c
+2023-12-08 12:52:32.698 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BinaryType@43ff3d18
+2023-12-08 12:52:32.698 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BinaryType@43ff3d18
+2023-12-08 12:52:32.698 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BinaryType@43ff3d18
+2023-12-08 12:52:32.700 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@4d3d125e
+2023-12-08 12:52:32.701 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@4d3d125e
+2023-12-08 12:52:32.701 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@4d3d125e
+2023-12-08 12:52:32.703 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.RowVersionType@49637de2
+2023-12-08 12:52:32.704 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.ImageType@d41bdf4
+2023-12-08 12:52:32.706 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.CharArrayType@876ce2d
+2023-12-08 12:52:32.707 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.CharArrayType@876ce2d
+2023-12-08 12:52:32.707 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.CharArrayType@876ce2d
+2023-12-08 12:52:32.709 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@5e5c5345
+2023-12-08 12:52:32.710 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@5e5c5345
+2023-12-08 12:52:32.710 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@5e5c5345
+2023-12-08 12:52:32.711 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.TextType@1570ad1c
+2023-12-08 12:52:32.712 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.NTextType@4e7d426f
+2023-12-08 12:52:32.716 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BlobType@440650d8
+2023-12-08 12:52:32.716 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@440650d8
+2023-12-08 12:52:32.717 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@2044db22
+2023-12-08 12:52:32.720 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.ClobType@54d982f4
+2023-12-08 12:52:32.721 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@54d982f4
+2023-12-08 12:52:32.728 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.NClobType@1fc4552
+2023-12-08 12:52:32.729 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@1fc4552
+2023-12-08 12:52:32.731 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@3d67b58b
+2023-12-08 12:52:32.732 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@112865d
+2023-12-08 12:52:32.735 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.SerializableType@42a5c17c
+2023-12-08 12:52:32.747 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.ObjectType@19e54be3
+2023-12-08 12:52:32.748 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@19e54be3
+2023-12-08 12:52:32.749 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@23d68e55
+2023-12-08 12:52:32.749 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@7ea7c1d
+2023-12-08 12:52:32.750 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@5ea0819b
+2023-12-08 12:52:32.751 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@353bffb4
+2023-12-08 12:52:32.751 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@22087b60
+2023-12-08 12:52:32.753 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@7656f1a8
+2023-12-08 12:52:32.754 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@2c201aa0
+2023-12-08 12:52:32.754 DEBUG 21060 --- [task-1] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@460c86cf
+2023-12-08 12:52:32.892  INFO 21060 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-08 12:52:34.216  INFO 21060 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-08 12:52:34.275  INFO 21060 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-12-08 12:52:34.777 DEBUG 21060 --- [task-1] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@78b9d2aa] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@44b88d32]
+2023-12-08 12:52:35.427 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.BookingStatus
+2023-12-08 12:52:35.431 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.RoleName
+2023-12-08 12:52:35.432 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.ScheduleStatus
+2023-12-08 12:52:35.607 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.BookingStatus
+2023-12-08 12:52:35.608 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.RoleName
+2023-12-08 12:52:35.609 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.ScheduleStatus
+2023-12-08 12:52:35.959 DEBUG 21060 --- [task-1] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@78b9d2aa] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@7f9ce467]
+2023-12-08 12:52:36.118 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.BookingStatus
+2023-12-08 12:52:36.118 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.BookingStatus
+2023-12-08 12:52:36.649 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.BookingStatus
+2023-12-08 12:52:36.649 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.BookingStatus
+2023-12-08 12:52:36.668 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.RoleName
+2023-12-08 12:52:36.668 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.RoleName
+2023-12-08 12:52:36.681 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.RoleName
+2023-12-08 12:52:36.681 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.RoleName
+2023-12-08 12:52:36.683 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.ScheduleStatus
+2023-12-08 12:52:36.683 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.ScheduleStatus
+2023-12-08 12:52:36.698 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.ScheduleStatus
+2023-12-08 12:52:36.699 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.ScheduleStatus
+2023-12-08 12:52:37.026 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.BookingStatus
+2023-12-08 12:52:37.026 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.BookingStatus
+2023-12-08 12:52:37.027 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.RoleName
+2023-12-08 12:52:37.027 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.RoleName
+2023-12-08 12:52:37.028 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.ScheduleStatus
+2023-12-08 12:52:37.028 DEBUG 21060 --- [task-1] org.hibernate.type.EnumType              : Using NAMED-based conversion for Enum net.javaguides.springboot.model.ScheduleStatus
+2023-12-08 12:52:37.393  INFO 21060 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-08 12:52:37.410 TRACE 21060 --- [task-1] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@7f9ce467] for TypeConfiguration
+2023-12-08 12:52:37.414  INFO 21060 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-08 12:52:37.415 TRACE 21060 --- [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@7f9ce467] for TypeConfiguration
+2023-12-08 12:52:37.415 DEBUG 21060 --- [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@5d43d15a] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@7f9ce467]
+2023-12-08 12:52:37.419  INFO 21060 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-12-08 12:52:37.423  INFO 21060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-08 12:52:37.435  INFO 21060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-12-08 12:52:37.439  INFO 21060 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-12-08 12:52:37.456  INFO 21060 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-12-08 12:52:37.461 ERROR 21060 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   bookingController defined in file [C:\Users\Kris\Downloads\registration-login-spring-boot-security-thymeleaf-hibernate-master\target\classes\net\javaguides\springboot\Controllers\Booking\BookingController.class]
+      ↓
+   bookingServiceImpl defined in file [C:\Users\Kris\Downloads\registration-login-spring-boot-security-thymeleaf-hibernate-master\target\classes\net\javaguides\springboot\service\Booking\BookingServiceImpl.class]
+┌─────┐
+|  userServiceImpl defined in file [C:\Users\Kris\Downloads\registration-login-spring-boot-security-thymeleaf-hibernate-master\target\classes\net\javaguides\springboot\service\User\UserServiceImpl.class]
+↑     ↓
+|  securityConfiguration (field private net.javaguides.springboot.service.User.UserService net.javaguides.springboot.config.SecurityConfiguration.userService)
+└─────┘
+
+
+2023-12-08 12:52:37.476  WARN 21060 --- [restartedMain] o.s.boot.SpringApplication               : Unable to close ApplicationContext
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'delegatingApplicationListener' defined in class path resource [org/springframework/security/config/annotation/web/configuration/WebSecurityConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:512) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.retrieveApplicationListeners(AbstractApplicationEventMulticaster.java:245) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.event.AbstractApplicationEventMulticaster.getApplicationListeners(AbstractApplicationEventMulticaster.java:197) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:134) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:81) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.availability.AvailabilityChangeEvent.publish(AvailabilityChangeEvent.java:67) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:167) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:978) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:814) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+	at net.javaguides.springboot.RegistrationLoginSpringBootSecurityThymeleafApplication.main(RegistrationLoginSpringBootSecurityThymeleafApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.3.0.RELEASE.jar:2.3.0.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': Initialization of bean failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:109) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:251) ~[spring-aop-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1141) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1114) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:506) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanDefinition(DefaultListableBeanFactory.java:814) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getMergedLocalBeanDefinition(AbstractBeanFactory.java:1282) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:297) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor$ImportAwareBeanPostProcessor.postProcessBeforeInitialization(ConfigurationClassPostProcessor.java:456) ~[spring-context-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:416) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.6.RELEASE.jar:5.2.6.RELEASE]
+	... 43 common frames omitted
+

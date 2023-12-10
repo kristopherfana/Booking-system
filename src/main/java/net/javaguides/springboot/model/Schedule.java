@@ -15,18 +15,16 @@ public class Schedule {
     @Column(nullable = false)
     private LocalDate date;
 
-    @Column(nullable=false, name="start_time")
-    private LocalTime startTime;
+    @Column(nullable=false, name="time")
+    private LocalTime time;
 
-    @Column(nullable = false, name="end_time")
-    private LocalTime endTime;
-
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="barber_id")
     private User barber;
 
-    @Enumerated
-    private BookingStatus status;
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "ENUM('FREE', 'BUSY') DEFAULT 'FREE'")
+    private ScheduleStatus status;
 
     public Schedule() {
     }
@@ -47,20 +45,12 @@ public class Schedule {
         this.date = date;
     }
 
-    public LocalTime getStartTime() {
-        return startTime;
+    public LocalTime getTime() {
+        return time;
     }
 
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
-    }
-
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
+    public void setTime(LocalTime startTime) {
+        this.time = startTime;
     }
 
     public User getBarber() {
@@ -71,11 +61,11 @@ public class Schedule {
         this.barber = barber;
     }
 
-    public BookingStatus getStatus() {
+    public ScheduleStatus getStatus() {
         return status;
     }
 
-    public void setStatus(BookingStatus status) {
+    public void setStatus(ScheduleStatus status) {
         this.status = status;
     }
 
@@ -84,8 +74,7 @@ public class Schedule {
         return "Schedule{" +
                 "id=" + id +
                 ", date=" + date +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
+                ", startTime=" + time +
                 ", barber=" + barber +
                 ", status=" + status +
                 '}';
